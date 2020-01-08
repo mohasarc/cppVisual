@@ -1,14 +1,19 @@
 #ifndef TOKEN_H
 #define TOKEN_H
-class Token(){
+#include <string>
+using namespace std;
+
+class Token{
 public:
 	Token();
-	Token(Token &toCopy);
+	Token(const Token &toCopy);
 	~Token();
-	void setType(string atype);
+	void operator=(const Token &rhs);
+	void setType(const string atype);
 	string getType();
-	void setComment(string acomment);
-	string getComment();
+	void setContent(const string acontent);
+	void setContent(const char acontent);
+	string getContent();
 private:
 	string type;
 	string content;
